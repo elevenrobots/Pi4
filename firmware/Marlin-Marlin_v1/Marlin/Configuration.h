@@ -16,7 +16,7 @@
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(ERL, V0.1)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the hostm
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -343,7 +343,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
-#define min_software_endstops true // If true, axis won't move to coordinates less than HOME_POS.
+#define min_software_endstops false // If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing
@@ -465,7 +465,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 // default settings
 //下面的参数非常重要，关系到打印机是否能够打印出正确的尺寸，需要根据你使用的同步带，同步轮，丝杆等参数进行计算，或根据下面数据做等比例调整。
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.5, 80.5,400*1.014,80.5}  // default steps per unit for Ultimaker //I3 j
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.5, 80.5,400*1.014,100.625}  //E 80.5 - 24mm when 30mm chosen. 80.5 * 30 / 24 = 100.625 default default steps per unit for Ultimaker //I3 j
 #define DEFAULT_MAX_FEEDRATE          {100, 100, 5, 50}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {5000,5000,90,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 //#define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000} //默认参数
